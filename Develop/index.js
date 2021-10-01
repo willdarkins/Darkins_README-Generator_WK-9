@@ -3,7 +3,10 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 
-const questions = () => {
+const promptUser = readMeData => {
+    if (!readMeData.answers) {
+        readMeData.answers = [];
+    }
     return inquirer.prompt([
         {
             type: 'input',
@@ -17,7 +20,7 @@ const questions = () => {
         },
     ]);
 }
-questions().then(answers => console.log(answers));
+promptUser().then(answers => console.log(answers));
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { }
