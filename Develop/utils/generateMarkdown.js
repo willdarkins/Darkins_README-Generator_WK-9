@@ -5,19 +5,19 @@ const renderLicenseBadge = license => {
     return '';
   }
   let badge = ''
-  if(badge === 'MIT') {
+  if(license === 'MIT') {
     badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
-  } else if (badge === 'APACHE 2.0') {
+  } else if (license === 'APACHE 2.0') {
     badge = `![APACHE 2.0](https://img.shields.io/badge/License-APACHE2.0-blue.svg)`
-  } else if (badge === 'GPL') {
+  } else if (license === 'GPL') {
     badge = `![GPL license](https://img.shields.io/badge/License-GPL-brightgreen.svg)`
-  } else if (badge === 'postgresql') {
+  } else if (license === 'postgresql') {
     badge = `![postgresql](https://img.shields.io/badge/License-postgresql-blueviolet.svg)`
   }
    else {
-    license.badge = "N/A"
+    badge = "N/A"
   }
-  return badge;
+  return license;
 };
 
 // TODO: Create a function that returns the license link

@@ -90,15 +90,15 @@ const questions = () => {
             type: 'checkbox',
             name: 'license',
             message: 'What kind of license should be referenced for your project?',
-            choices: ['MIT', 'APACHE 2.0', 'GPL', 'postgresql']
+            choices: ['MIT', 'APACHE2.0', 'GPL', 'postgresql']
         },
     ])
 }
 
   questions()
   .then(data => {
-      const fileLocation = `${data.projectName.toLowerCase().split(' ').join('')}.md`;
-    fs.writeFile(fileLocation, generateMarkdown(data), err => {
+      const fileName = `${data.projectName.toLowerCase().split(' ').join('')}.md`;
+    fs.writeFile(fileName, generateMarkdown(data), err => {
         if (err) throw new Error(err);
         console.log('README created! Check it out in this directory to see!');
       });    
