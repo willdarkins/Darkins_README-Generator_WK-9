@@ -110,9 +110,11 @@ const questions = () => {
 
   questions()
   .then(data => {
-      const fileName = `${data.projectName.split(' ').join('')}.md`;
+      const fileName = `./dist/${data.projectName.split(' ').join('')}.md`;
     fs.writeFile(fileName, generateMarkdown(data), err => {
         if (err) throw new Error(err);
         console.log('README created! Check it out in this directory to see!');
       });    
   })
+
+  
