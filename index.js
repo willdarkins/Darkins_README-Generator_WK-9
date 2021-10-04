@@ -1,14 +1,17 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
+const util = require("util");
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
+const writeFileAsync = util.promisify(fs.writeFile);
+
 const questions = () => {
 
     return inquirer.prompt([
         {
             type: 'input',
             name: 'projectName',
-            message: 'Please provide the title of your project.',
+            message: 'Please provide the title of your project (Required)',
             validate: titleInput => {
                 if (titleInput) {
                     return true;
@@ -22,7 +25,7 @@ const questions = () => {
     {
             type: 'input',
             name: 'description',
-            message: 'Write a description of your project',
+            message: 'Write a description of your project (Required)',
             validate: descripInput => {
                 if (descripInput) {
                     return true ;
@@ -34,7 +37,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'install',
-            message: 'Please provide a step-by-step guide in order to install your project',
+            message: 'Please provide a step-by-step guide in order to install your project (Required)',
             validate: installInput => {
                 if (installInput) {
                     return true;
@@ -52,7 +55,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide instructions and examples for use.',
+            message: 'Provide instructions and examples for use (Required)',
             validate: usageInput => {
                 if (usageInput) {
                     return true;
@@ -76,7 +79,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'github',
-            message: 'Enter your github user name...',
+            message: 'Enter your github user name (Required)',
             validate: githubInput => {
                 if (githubInput) {
                     return true;
@@ -89,7 +92,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'Please provide your email address',
+            message: 'Please provide your email address (Required)',
             validate: emailInput => {
                 if (emailInput) {
                     return true;
@@ -108,13 +111,15 @@ const questions = () => {
     ])
 }
 
-  questions()
-  .then(data => {
-      const fileName = `./dist/${data.projectName.split(' ').join('')}.md`;
-    fs.writeFile(fileName, generateMarkdown(data), err => {
-        if (err) throw new Error(err);
-        console.log('README created! Check it out in this directory to see!');
-      });    
-  })
+async function init() {
+    try {
+        const data = await questions();
+        const generateContent = generateMarkdown(data);
+        await writeFileAsync(`./dist/${data.projectName.split(' ').join('')}.md`, generateContent);
+        console.log('README created! Check it out in the dist sub-directory to see!');
+    } catch(err) {
+        console.log(err)
+    };
+};
 
-  
+init();

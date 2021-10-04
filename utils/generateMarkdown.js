@@ -65,14 +65,14 @@ const renderLicenseSection = license => {}
 
 // TODO: Create a function to generate markdown for README
 
-generateMarkdown = data => {
+const generateMarkdown = data => {
   return `
-# ${data.projectName}
+# 💻 ${data.projectName}
 
 ## Description
 *The what, why, and how:*<br>
 <br>
-${data.description}
+❓ ${data.description}
 
 ## Table of Contents
 
@@ -85,7 +85,7 @@ ${data.description}
 ## Installation
 *Steps required to install project and how to get the development environment running:* 
 <br>
-${data.install}
+🔌 ${data.install}
 
 ## Language 
 *The following programming languages were utilized when completing this project:*
@@ -95,10 +95,10 @@ ${renderLanguageBadge(data.language)}
 ## Usage
 *Instructions and examples for use:*
 <br>
-${data.usage}
+🏁 ${data.usage}
 
 ## Credits
-${data.credit}
+💳 ${data.credit}
 
 ## License
 This project is licensed under: <br>
@@ -106,7 +106,7 @@ ${renderLicenseBadge(data.license)}
 ${renderLicenseLink(data.license)}
 
 ## Contact
-* Email: ${data.email}
+* 📪 ${data.email}
 * Github: [${data.github}](https://github.com/${data.github}) 
 `;
 }
