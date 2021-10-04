@@ -18,6 +18,19 @@ const questions = () => {
                 }
             }
         },
+
+    {
+            type: 'input',
+            name: 'description',
+            message: 'Write a description of your project',
+            validate: descripInput => {
+                if (descripInput) {
+                    return true ;
+                } else {
+                    console.log('A short project description is required. Please provide.')
+                }
+            }
+    },
         {
             type: 'input',
             name: 'install',
@@ -34,7 +47,7 @@ const questions = () => {
             type: 'checkbox',
             name: 'language',
             message: 'What programming languages did you use creating this project? (Select all that apply)',
-            choices: ['HTML', 'CSS', 'Javascript', 'JQuery', 'Python', 'Node', 'Java']
+            choices: ['HTML', 'CSS', 'Javascript', 'JQuery', 'Python', 'Node.JS', 'Java']
         },
         {
             type: 'input',
@@ -89,15 +102,15 @@ const questions = () => {
         {
             type: 'checkbox',
             name: 'license',
-            message: 'What kind of license should be referenced for your project?',
-            choices: ['MIT', 'APACHE2.0', 'GPL', 'postgresql']
+            message: 'What kind of license should be referenced for your project? (Please select one option)',
+            choices: ['MIT', 'APACHE 2.0', 'GPL', 'postgresql']
         },
     ])
 }
 
   questions()
   .then(data => {
-      const fileName = `${data.projectName.toLowerCase().split(' ').join('')}.md`;
+      const fileName = `${data.projectName.split(' ').join('')}.md`;
     fs.writeFile(fileName, generateMarkdown(data), err => {
         if (err) throw new Error(err);
         console.log('README created! Check it out in this directory to see!');
