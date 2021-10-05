@@ -6,6 +6,11 @@
 
 Please follow <a href= https://drive.google.com/file/d/15vxsg6BmezUAtyOiAbzaSUpDzoFKmBRK/view?usp target="_blank">THIS LINK</a> to view a working tutorial of the application.
 
+Below are screenshots that provide further reference:
+![SCREENSHOT_1](https://user-images.githubusercontent.com/84754257/136082746-27412b00-279a-4f12-a1b0-572791ca22ab.JPG)
+![SCREENSHOT_2](https://user-images.githubusercontent.com/84754257/136082753-0d4267c8-27c4-4fa4-ba88-51d06e39c47d.JPG)
+![SCREENSHOT_3](https://user-images.githubusercontent.com/84754257/136082758-36090c66-5b20-46b2-bd48-10a76aa23fe6.JPG)
+
 ## Table of Contents
 
 * [Installation](#installation)
