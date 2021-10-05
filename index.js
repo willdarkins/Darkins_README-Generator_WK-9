@@ -22,18 +22,18 @@ const questions = () => {
             }
         },
 
-    {
+        {
             type: 'input',
             name: 'description',
             message: 'Write a description of your project (Required)',
             validate: descripInput => {
                 if (descripInput) {
-                    return true ;
+                    return true;
                 } else {
                     console.log('A short project description is required. Please provide.')
                 }
             }
-    },
+        },
         {
             type: 'input',
             name: 'install',
@@ -73,8 +73,26 @@ const questions = () => {
         {
             type: 'input',
             name: 'credit',
-            message: 'List your collaborators with links to their GitHub profiles.',
+            message: 'List your collaborators with links to their GitHub profiles:',
             when: ({ confirmCredits }) => confirmCredits
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'What kind of license should be referenced for your project? (Please select one option)',
+            choices: ['MIT', 'APACHE 2.0', 'GPL', 'postgresql']
+        },
+        {
+            type: 'confirm',
+            name: 'confirmFeature',
+            message: 'Does your project have any features you would like to highlight?',
+            default: true
+        },
+        {
+            type: 'input',
+            name: 'feature',
+            message: 'Provide a list of features associated with your project:',
+            when: ({ confirmFeature }) => confirmFeature
         },
         {
             type: 'input',
@@ -102,12 +120,6 @@ const questions = () => {
                 }
             },
         },
-        {
-            type: 'checkbox',
-            name: 'license',
-            message: 'What kind of license should be referenced for your project? (Please select one option)',
-            choices: ['MIT', 'APACHE 2.0', 'GPL', 'postgresql']
-        },
     ])
 }
 
@@ -117,7 +129,7 @@ async function init() {
         const generateContent = generateMarkdown(data);
         await writeFileAsync(`./dist/${data.projectName.split(' ').join('')}.md`, generateContent);
         console.log('README created! Check it out in the dist sub-directory to see!');
-    } catch(err) {
+    } catch (err) {
         console.log(err)
     };
 };
