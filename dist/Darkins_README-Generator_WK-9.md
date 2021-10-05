@@ -4,9 +4,6 @@
 *The what, why, and how:*<br>
 ❓ A README generator that uses Javascript and node.js to quickly create a professional README for a new project.
 
-Below is a video tutorial of the project:
-
-
 ## Table of Contents
 
 * [Installation](#installation)
@@ -20,10 +17,7 @@ Below is a video tutorial of the project:
 ## Installation
 *Steps required to install project and how to get the development environment running:* 
 <br>
-🔌 
-* Begin by cloning the starter code from the project's Github repository.
-* Open the project in code editor and prompt your terminal.
-* In the terminal, execute the following prompts: 'npm init' 'npm i file-system' 'npm install inquirer'
+🔌 Begin by cloning the starter code from the project's Github repository. Open the project in code editor and prompt your terminal. In the terminal, execute the following prompts: 'npm init' 'npm i file-system' 'npm install inquirer'
 
 ## Language 
 *The following programming languages were utilized when completing this project:*
@@ -38,7 +32,8 @@ Below is a video tutorial of the project:
 ## Credits
 *A thank you to those who helped make this happen:*
 <br>
-💳 My classmates Duck Arroyo and Ben Tantillo for their support during study sessions. Also a shout-out to my tutor Amanda Chapman for hammering home the importance of switch statements.
+💳 undefined
+
 
   ## License
 *This project is licensed under:* <br>

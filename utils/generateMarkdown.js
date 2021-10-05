@@ -43,7 +43,7 @@ const renderLicenseBadge = license => {
   if (!license) {
     return '';
   }
-// For loop to iterate through badges and select from user input
+  // For loop to iterate through badges and select from user input
   for (var i = 0; i < license.length; i++) {
     switch (license[i]) {
       case 'MIT':
@@ -73,7 +73,7 @@ const renderLicenseLink = license => {
   if (!license) {
     return ''
   }
-// For loop to iterate through license links and select from user input
+  // For loop to iterate through license links and select from user input
   for (var i = 0; i < license.length; i++) {
     switch (license[i]) {
       case 'MIT':
@@ -101,7 +101,7 @@ const renderLicenseLink = license => {
 const renderLicenseSection = license => {
   return `
   ## License
-This project is licensed under: <br>
+*This project is licensed under:* <br>
 ${renderLicenseBadge(license)}<br>
 ${renderLicenseLink(license)}`
 }
@@ -124,7 +124,7 @@ const generateMarkdown = data => {
 * [Credits](#credits)
 * [License](#license)
 * [Features](#feature)
-* [Contact](#contact)
+* [Questions](#Questions)
 
 ## Installation
 *Steps required to install project and how to get the development environment running:* 
@@ -157,7 +157,8 @@ ${renderLicenseSection(data.license)}
 👐 This project adheres to standards set by the <a href = https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md>Contributor Covenant</a>.<br>
 Please consult this documentation before contributing to this project.
 
-## Contact
+## Questions
+If you have any questions regarding the development process of this application, or specific questions about contributing, feel free to reach me by email or on Github.
 * Email 📪 ${data.email}
 * Github 🗿 [${data.github}](https://github.com/${data.github}) 
 `;
