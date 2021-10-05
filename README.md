@@ -4,7 +4,7 @@
 *The what, why, and how:*<br>
 ❓ A README generator that uses Javascript and node.js to quickly create a professional README for a new project.
 
-Please follow <a href= https://drive.google.com/file/d/15vxsg6BmezUAtyOiAbzaSUpDzoFKmBRK/view?usp target="_blank">THIS LINK</a> to view a working tutorial of the application.
+Please follow <a href= https://drive.google.com/file/d/15vxsg6BmezUAtyOiAbzaSUpDzoFKmBRK/view?usp target="blank">THIS LINK</a> to view a working video tutorial of the application.
 
 Below are screenshots that provide further reference:
 ![SCREENSHOT_1](https://user-images.githubusercontent.com/84754257/136082746-27412b00-279a-4f12-a1b0-572791ca22ab.JPG)
