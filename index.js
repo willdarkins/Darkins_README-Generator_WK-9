@@ -1,10 +1,11 @@
-// TODO: Include packages needed for this application
+// Packages needed to run this application
 const fs = require('fs');
 const util = require("util");
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
 const writeFileAsync = util.promisify(fs.writeFile);
 
+//Empty array meant to store user input
 const questions = () => {
 
     return inquirer.prompt([
@@ -123,15 +124,18 @@ const questions = () => {
     ])
 }
 
+// Async function that will ultimatley write new file
 async function init() {
     try {
         const data = await questions();
+        const fileSpecs = `./dist/${data.projectName.split(' ').join('')}.md`
         const generateContent = generateMarkdown(data);
-        await writeFileAsync(`./dist/${data.projectName.split(' ').join('')}.md`, generateContent);
+        await writeFileAsync(fileSpecs, generateContent);
         console.log('README created! Check it out in the dist sub-directory to see!');
     } catch (err) {
         console.log(err)
     };
 };
 
+// Initialize file writing
 init();

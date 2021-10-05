@@ -1,8 +1,10 @@
+// Function to display programming language badges in template literal
 const renderLanguageBadge = language => {
   let langBadge = ''
   if (!language) {
     return '';
   }
+  // For loop to iterate through badges and select from user input
   for (var i = 0; i < language.length; i++) {
     switch (language[i]) {
       case 'HTML':
@@ -35,11 +37,13 @@ const renderLanguageBadge = language => {
   return langBadge;
 }
 
+// Function to display license badges in template literal
 const renderLicenseBadge = license => {
   let badge = ''
   if (!license) {
     return '';
   }
+// For loop to iterate through badges and select from user input
   for (var i = 0; i < license.length; i++) {
     switch (license[i]) {
       case 'MIT':
@@ -63,36 +67,37 @@ const renderLicenseBadge = license => {
   return badge;
 };
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Function to display license links in template literal
 const renderLicenseLink = license => {
   let link = ''
   if (!license) {
     return ''
   }
+// For loop to iterate through license links and select from user input
   for (var i = 0; i < license.length; i++) {
     switch (license[i]) {
       case 'MIT':
-      link += `<a href= https://opensource.org/licenses/MIT)>MIT License Link</a><br>` 
-      break;
+        link += `<a href= https://opensource.org/licenses/MIT)>MIT License Link</a><br>`
+        break;
       case 'APACHE 2.0':
-      link += `<a href= https://opensource.org/licenses/Apache-2.0>APACHE 2.0 License Link</a><br>`
-      break;
+        link += `<a href= https://opensource.org/licenses/Apache-2.0>APACHE 2.0 License Link</a><br>`
+        break;
       case 'GPL':
-      link += `<a href= https://opensource.org/licenses/GPL-2.0>GPL License Link</a><br>`
-      break;
+        link += `<a href= https://opensource.org/licenses/GPL-2.0>GPL License Link</a><br>`
+        break;
       case 'postgresql':
-      link += `<a href= https://opensource.org/licenses/PostgreSQL>postgresql License Link</a><br>`
-      break;
+        link += `<a href= https://opensource.org/licenses/PostgreSQL>postgresql License Link</a><br>`
+        break;
 
       default:
-      ''
-      break;
+        ''
+        break;
     }
   }
   return link;
 }
 
+// Funciton to display license badges, links and html template literal for that section
 const renderLicenseSection = license => {
   return `
   ## License
@@ -101,7 +106,7 @@ ${renderLicenseBadge(license)}<br>
 ${renderLicenseLink(license)}`
 }
 
-// TODO: Create a function to generate markdown for README
+// Function to generate markdown for README
 
 const generateMarkdown = data => {
   return `
