@@ -14,7 +14,7 @@ const renderLanguageBadge = language => {
         langBadge += `![CSS](https://img.shields.io/badge/Language-CSS-important.svg)`
         break;
       case 'Javascript':
-        langBadge += `![Javascript](https://img.shields.io/badge/Language-HTML-yellow.svg)`
+        langBadge += `![Javascript](https://img.shields.io/badge/Language-javascript-yellow.svg)`
         break;
       case 'JQuery':
         langBadge += `![JQuery](https://img.shields.io/badge/Language-JQuery-informational.svg)`
